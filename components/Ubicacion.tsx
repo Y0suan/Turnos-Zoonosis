@@ -10,7 +10,6 @@ export const Ubicacion = () => {
         
         height="300"
         style={{ border: 0 }}
-        allowFullScreen=""
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         className=' sm:w-[700px]  w-[100%] '
