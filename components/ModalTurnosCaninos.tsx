@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Modal,SelectItem , ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input, DatePicker, Select } from "@nextui-org/react";
+import { Modal,SelectItem , ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input, DatePicker, Select, Code } from "@nextui-org/react";
 
 export const ModalTurnosCaninos = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -22,11 +22,11 @@ export const ModalTurnosCaninos = () => {
   return (
     <>
       <div onClick={onOpen} className='cursor-pointer flex gap-7 shadow sm:w-2/5 border-gray-200 border-1 hover:border-violet-400 p-4 rounded'>
-      <div className='rounded w-1/3 h-auto bg-gradient-to-r from-gray-300 to-gray-100' >
+      <div className=' dogFondo rounded w-1/3 h-auto bg-gradient-to-r from-gray-300 to-gray-100' >
       </div>
       <div className='w-2/3'>
           <h3 className='font-semibold text-xl'>Turno Castración Caninos</h3>
-          <p className='text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quidem fugiat distinctio. Distinctio ex sit odio. </p>
+          <p className='text-gray-600'>"Te brindamos una herramienta eficaz y cómoda para que puedas solicitar turnos de manera rápida y sencilla en cualquier momento." </p>
         </div>
       </div>
 
@@ -38,6 +38,8 @@ export const ModalTurnosCaninos = () => {
         <ModalContent>
           <>
             <ModalHeader className="flex flex-col gap-1">Solicita Un Turno De Castracion Canina</ModalHeader>
+          <Code color="primary" className='text-center rounded-none' >Demo actual no permite solicitar turno.</Code>
+
             <ModalBody>
               {showFirstSection && (
                 <>

@@ -21,6 +21,7 @@ export const DiasdeAtencion = () => {
          <div className='text-gray-800  border-2 border-l-gray-400 border-white w-fit p-4' >
            <h6 className=' text-3xl ' >Jueves</h6>
            <p>14:30 a 17:30</p>
+           <p>Operativo Barrial</p>
          </div>
          <div className='text-gray-800  border-2 border-l-gray-400 border-white w-fit p-4' >
            <h6 className=' text-3xl ' >Viernes</h6>
