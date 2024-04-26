@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Modal,SelectItem , ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input, DatePicker, Select, Code } from "@nextui-org/react";
+import { Modal,SelectItem ,ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input, DatePicker, Select, Code, RadioGroup, Radio } from "@nextui-org/react";
 
 export const ModalTurnosCaninos = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -21,10 +21,10 @@ export const ModalTurnosCaninos = () => {
 
   return (
     <>
-      <div onClick={onOpen} className='cursor-pointer flex gap-7 shadow sm:w-2/5 border-gray-200 border-1 hover:border-violet-400 p-4 rounded'>
-      <div className=' dogFondo rounded w-1/3 h-auto bg-gradient-to-r from-gray-300 to-gray-100' >
+      <div onClick={onOpen} className='flex flex-col sm:flex-row sm:py-10 cursor-pointer gap-7 shadow sm:w-2/5 border-gray-200 border-1 hover:border-violet-400 p-4 rounded'>
+      <div className=' dogFondo rounded sm:h-[100%] h-32  sm:w-32 w-[100%] bg-gradient-to-r from-gray-300 to-gray-100' >
       </div>
-      <div className='w-2/3'>
+      <div className='sm:w-2/3'>
           <h3 className='font-semibold text-xl'>Turno Castración Caninos</h3>
           <p className='text-gray-600'>"Te brindamos una herramienta eficaz y cómoda para que puedas solicitar turnos de manera rápida y sencilla en cualquier momento." </p>
         </div>
@@ -33,13 +33,11 @@ export const ModalTurnosCaninos = () => {
       <Modal
         isOpen={isOpen}
         onClose={onClose}
-        placement="top-center"
+        placement="center"
       >
         <ModalContent>
           <>
             <ModalHeader className="flex flex-col gap-1">Solicita Un Turno De Castracion Canina</ModalHeader>
-          <Code color="primary" className='text-center rounded-none' >Demo actual no permite solicitar turno.</Code>
-
             <ModalBody>
               {showFirstSection && (
                 <>
@@ -97,42 +95,40 @@ export const ModalTurnosCaninos = () => {
               )}
               {showThirdSection && (
                 <>
-                <Button  color="secondary" size="lg" className=' ' >
-                  Martes <br></br>7:30
-                </Button>
-                <Button variant="faded" size="lg" color="secondary" >
-                  Martes <br></br>9:00
-                </Button>
-                <Button  color="secondary" size="lg" >
-                  Martes <br></br>14:30
-                </Button>
-                <Button  color="secondary" size="lg">
-                  Jueves <br></br>7:30
-                </Button>
-
-                  {/* <Select label="Día" placeholder="Seleccione un día">
-                    <SelectItem value="Martes">Martes</SelectItem>
-                    <SelectItem value="Miércoles">Jueves</SelectItem>
-                  </Select>
-                  <Select label="Hora" placeholder="Seleccione un Horario">
-                    <SelectItem value="7:30">7:30</SelectItem>
-                    <SelectItem value="9:00">9:00</SelectItem>
-                    <SelectItem value="14:30">14:30</SelectItem>
-                  </Select> */}
+                <RadioGroup label="Turnos Disponibles" description=" ">
+                <Radio description="7:30" value="Martes-7:30">
+                  Martes
+                </Radio>
+                <Radio description="9:00" value="Martes-9:00">
+                  Martes
+                </Radio>
+                <Radio  isDisabled description="14:30" value="MArtes-14:30">
+                  Martes
+                </Radio>
+                <Radio
+                description="7:30"
+                value="Jueves-7:30"
+                >
+                Jueves
+                </Radio>
+                <Radio description="9:00" value="Jueves-9:00">
+                  Jueves
+                </Radio>
+                </RadioGroup>
                 </>
               )}
             </ModalBody>
             <ModalFooter>
-              <Button color="danger" variant="flat" onClick={onClose}>
+              {/* <Button color="danger" radius="sm" variant="flat" onClick={onClose}>
                 Cancelar
-              </Button>
+              </Button> */}
               {(showFirstSection || showSecondSection) && (
-                <Button color="primary" onClick={handleNextButtonClick}>
+                <Button radius="sm" color="primary" onClick={handleNextButtonClick}>
                   Siguiente
                 </Button>
               )}
               {showThirdSection && (
-                <Button color="primary" onClick={onClose}>
+                <Button radius="sm" color="primary" onClick={onClose}>
                   Finalizar
                 </Button>
               )}

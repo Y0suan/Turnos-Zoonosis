@@ -12,7 +12,7 @@ import { Ubicacion } from "@/components/Ubicacion";
 
 export default function Home() {
 	return (
-		<section className="">
+		<section className=" w-[100%] overflow-hidden ">
 			<Inicio/>
 			<Turnos/>
 			<Ubicacion/>
