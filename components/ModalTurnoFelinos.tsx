@@ -1,30 +1,13 @@
 "use client"
 import React, { useState } from 'react';
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input, RadioGroup, Radio, Code } from "@nextui-org/react";
+import { Modal,SelectItem , ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input, DatePicker, Select, Tooltip, Code, RadioGroup, Radio } from "@nextui-org/react";
 
-export const ModalTurnosCaninos = () => {
+export const ModalTurnoFelinos = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [showFirstSection, setShowFirstSection] = useState(true);
   const [showSecondSection, setShowSecondSection] = useState(false);
   const [showThirdSection, setShowThirdSection] = useState(false);
-  const [formData, setFormData] = useState({
-    nombreApellido: "",
-    direccion: "",
-    dni: "",
-    barrio: "",
-    nombreMascota: "",
-    razaEstilo: "",
-    sexo: "",
-    edad: "",
-    tallaTamano: "",
-    turno: ""
-  });
-  const [showCongratsMessage, setShowCongratsMessage] = useState(false);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const [selectedDate, setSelectedDate] = useState(null);
 
   const handleNextButtonClick = () => {
     if (showFirstSection) {
@@ -36,20 +19,14 @@ export const ModalTurnosCaninos = () => {
     }
   };
 
-  const handleSubmit = () => {
-    localStorage.setItem('formData', JSON.stringify(formData));
-    setShowCongratsMessage(true);
-    console.log('Formulario enviado:', formData);
-  };
-
   return (
     <>
       <div onClick={onOpen} className='flex flex-col sm:flex-row sm:py-10 cursor-pointer gap-7 shadow sm:w-2/5 border-gray-200 border-1 hover:border-violet-400 p-4 rounded'>
-        <div className=' dogFondo rounded sm:h-[100%] h-32  sm:w-32 w-[100%] bg-gradient-to-r from-gray-300 to-gray-100' >
-        </div>
-        <div className='sm:w-2/3'>
+      <div className='catFondo rounded sm:h-[100%] h-32  sm:w-32 w-[100%] bg-gradient-to-r from-gray-300 to-gray-100' >
+      </div>
+      <div className='sm:w-2/3'>
           <h3 className='font-semibold text-xl'>Turno Castración Felinos</h3>
-          <p className='text-gray-600'>"Te brindamos una herramienta eficaz y cómoda para que puedas solicitar turnos de manera rápida y sencilla en cualquier momento." </p>
+          <p className='text-gray-600'>"Te brindamos una herramienta eficaz y cómoda para que puedas solicitar turnos de manera rápida y sencilla en cualquier momento."</p>
         </div>
       </div>
 
@@ -60,96 +37,74 @@ export const ModalTurnosCaninos = () => {
       >
         <ModalContent>
           <>
-            <ModalHeader className="flex flex-col gap-1">Solicita Un Turno De Castración Canina</ModalHeader>
+            <ModalHeader className="flex flex-col gap-1">Solicita Un Turno De Castracion Felina</ModalHeader>
+            <Code color="primary" className='text-center rounded-none' >Demo actual no permite solicitar turno.</Code>
             <ModalBody>
-              {showCongratsMessage ? (
+              {showFirstSection && (
                 <>
-                <h2>Felicitaciones {formData.nombreApellido}, ya reservaste un turno para {formData.nombreMascota}.</h2>
-                <Code color="warning">El turno actualmente no válido <br></br>está siendo utilizado en una demo.</Code>
-                </>
-              ) : (
-                <>
-                  {showFirstSection && (
-                    <>
                   <Input
-                    name="nombreApellido"
+                    autoFocus
                     label="Nombre y Apellido"
                     placeholder=""
                     variant="bordered"
-                    value={formData.nombreApellido}
-                    onChange={handleInputChange}
                   />
                   <Input
-                    name="direccion"
+                    label="Telefono"
+                    placeholder=""
+                    variant="bordered"
+                  />
+                  <Input
+                    label="Correo"
+                    placeholder=""
+                    variant="bordered"
+                  />
+                  <Input
                     label="Dirección"
                     placeholder=""
                     variant="bordered"
-                    value={formData.direccion}
-                    onChange={handleInputChange}
                   />
                   <Input
-                    name="dni"
                     label="DNI"
                     placeholder=""
                     variant="bordered"
-                    value={formData.dni}
-                    onChange={handleInputChange}
                   />
                   <Input
-                    name="barrio"
                     label="Barrio"
                     placeholder=""
                     variant="bordered"
-                    value={formData.barrio}
-                    onChange={handleInputChange}
                   />
-                    </>
-                  )}
-                  {showSecondSection && (
-                    <>
-     <Input
-                    name="nombreMascota"
+                </>
+              )}
+              {showSecondSection && (
+                <>
+                  <Input
                     label="Nombre Mascota"
                     placeholder=""
                     variant="bordered"
-                    value={formData.nombreMascota}
-                    onChange={handleInputChange}
                   />
                   <Input
-                    name="razaEstilo"
                     label="Raza o Estilo"
                     placeholder=""
                     variant="bordered"
-                    value={formData.razaEstilo}
-                    onChange={handleInputChange}
                   />
                   <Input
-                    name="sexo"
                     label="Sexo"
                     placeholder=""
                     variant="bordered"
-                    value={formData.sexo}
-                    onChange={handleInputChange}
                   />
                   <Input
-                    name="edad"
                     label="Edad"
                     placeholder=""
                     variant="bordered"
-                    value={formData.edad}
-                    onChange={handleInputChange}
                   />
                   <Input
-                    name="tallaTamano"
                     label="Talla Tamaño"
                     placeholder=""
                     variant="bordered"
-                    value={formData.tallaTamano}
-                    onChange={handleInputChange}
                   />
-                    </>
-                  )}
-                  {showThirdSection && (
+                </>
+              )}
+              {showThirdSection && (
                     <>
                 <RadioGroup label="Turnos Disponibles" description=" ">
                 <Radio isDisabled description="14:30" value="Martes-14:30">
@@ -168,19 +123,20 @@ export const ModalTurnosCaninos = () => {
                 Miercoles
                 </Radio>
                 </RadioGroup>
-                    </>
-                  )}
                 </>
               )}
             </ModalBody>
             <ModalFooter>
+              {/* <Button color="danger" variant="flat" onClick={onClose}>
+                Cancelar
+              </Button> */}
               {(showFirstSection || showSecondSection) && (
-                <Button radius="sm" color="primary" onClick={handleNextButtonClick}>
+                <Button color="primary" onClick={handleNextButtonClick}>
                   Siguiente
                 </Button>
               )}
               {showThirdSection && (
-                <Button radius="sm" color="primary" onClick={handleSubmit}>
+                <Button radius="sm" color="primary" onClick={onClose}>
                   Finalizar
                 </Button>
               )}
@@ -189,6 +145,5 @@ export const ModalTurnosCaninos = () => {
         </ModalContent>
       </Modal>
     </>
-      )
-    }
-    
+  )
+}

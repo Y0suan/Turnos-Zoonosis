@@ -50,6 +50,7 @@ export const ModalTurnosCaninos = () => {
         <div className='sm:w-2/3'>
           <h3 className='font-semibold text-xl'>Turno Castración Caninos</h3>
           <p className='text-gray-600'>"Te brindamos una herramienta eficaz y cómoda para que puedas solicitar turnos de manera rápida y sencilla en cualquier momento." </p>
+        
         </div>
       </div>
 
@@ -61,11 +62,12 @@ export const ModalTurnosCaninos = () => {
         <ModalContent>
           <>
             <ModalHeader className="flex flex-col gap-1">Solicita Un Turno De Castración Canina</ModalHeader>
+            <Code color="primary" className='text-center rounded-none' >Demo actual no permite solicitar turno.</Code>
+
             <ModalBody>
               {showCongratsMessage ? (
                 <>
                 <h2>Felicitaciones {formData.nombreApellido}, ya reservaste un turno para {formData.nombreMascota}.</h2>
-                <Code color="warning">El turno actualmente no válido <br></br>está siendo utilizado en una demo.</Code>
                 </>
               ) : (
                 <>
