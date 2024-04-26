@@ -26,7 +26,7 @@ export const ModalTurnoFelinos = () => {
       </div>
       <div className='sm:w-2/3'>
           <h3 className='font-semibold text-xl'>Turno Castración Felinos</h3>
-          <p className='text-gray-600'>"Te brindamos una herramienta eficaz y cómoda para que puedas solicitar turnos de manera rápida y sencilla en cualquier momento."</p>
+          <p className='text-gray-600'>Te brindamos una herramienta eficaz y cómoda para que puedas solicitar turnos de manera rápida y sencilla en cualquier momento.</p>
         </div>
       </div>
 
