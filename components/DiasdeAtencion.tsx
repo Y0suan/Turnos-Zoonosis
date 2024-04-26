@@ -3,7 +3,7 @@ import React from 'react'
 
 export const DiasdeAtencion = () => {
   return (
-    <div className='sm:px-20 w-[100%] h-auto flex py-20 sm:flex-row flex-col ' >
+    <div className='sm:px-20 w-[100%] h-auto flex py-20 sm:flex-row flex-col  items-center ' >
       <div className='relative overflow-hidden sm:w-[500px] w-[400px] h-[400px] rounded-full  bg-gradient-to-r from-violet-500 to-violet-400 ' >
         <img className='absolute top-[-50px] ' src="https://res.cloudinary.com/dzqdjsrez/image/upload/v1713966847/alvan-nee-LHeDYF6az38-unsplash-removebg-preview_s8fxbd.png" alt="" />
       </div>
@@ -12,7 +12,9 @@ export const DiasdeAtencion = () => {
         <h4 className='text-4xl font-semibold text-[#533482]  ' >
           Dias de Atencion
         </h4>
-        <p className='text-gray-500' >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem sint, laboriosam illum cum adipisci deserunt error doloremque doloribus unde odit?</p>
+        <p className='text-gray-500' >
+        Te invitamos a visitarnos para una consulta y a traer a tu mascota. Puedes encontrarnos en nuestros días de atención regular o acercarte a nuestros operativos barriales junto con tus  mascotas.
+        </p>
         <div className='flex py-7 gap-10 flex-wrap ' >
          <div className='text-gray-800  border-2 border-l-gray-400 border-white w-fit p-4' >
            <h6 className=' text-3xl ' >Lunes</h6>
