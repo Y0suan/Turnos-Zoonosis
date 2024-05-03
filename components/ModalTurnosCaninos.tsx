@@ -64,7 +64,7 @@ export const ModalTurnosCaninos = () => {
             <ModalHeader className="flex flex-col gap-1">Solicita Un Turno De Castración Canina</ModalHeader>
             <Code color="primary" className='text-center rounded-none' >Demo actual no permite solicitar turno.</Code>
 
-            <ModalBody>
+{/*             <ModalBody>
               {showCongratsMessage ? (
                 <>
                 <h2>Felicitaciones {formData.nombreApellido}, ya reservaste un turno para {formData.nombreMascota}.</h2>
@@ -186,7 +186,7 @@ export const ModalTurnosCaninos = () => {
                   Finalizar
                 </Button>
               )}
-            </ModalFooter>
+            </ModalFooter> */}
           </>
         </ModalContent>
       </Modal>
