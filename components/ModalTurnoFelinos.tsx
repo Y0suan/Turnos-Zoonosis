@@ -39,7 +39,7 @@ export const ModalTurnoFelinos = () => {
           <>
             <ModalHeader className="flex flex-col gap-1">Solicita Un Turno De Castracion Felina</ModalHeader>
             <Code color="primary" className='text-center rounded-none' >Demo actual no permite solicitar turno.</Code>
-            <ModalBody>
+{/*             <ModalBody>
               {showFirstSection && (
                 <>
                   <Input
@@ -140,7 +140,7 @@ export const ModalTurnoFelinos = () => {
                   Finalizar
                 </Button>
               )}
-            </ModalFooter>
+            </ModalFooter> */}
           </>
         </ModalContent>
       </Modal>
